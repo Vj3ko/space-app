@@ -3,6 +3,12 @@
 @use "./components/fonts.scss" as *;
 @use "./components/breakpoints.scss" as *;
 
+.container {
+  @include breakpoint("large") {
+    padding-bottom: 0 !important;
+  }
+}
+
 .wrapper.c {
   @include breakpoint("medium") {
     margin-top: rem(0);

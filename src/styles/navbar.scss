@@ -102,15 +102,13 @@
         position: relative;
 
         .link {
-          outline: none;
-
           &::after {
             content: "";
             position: absolute;
             bottom: -35px;
             left: -1px;
             width: 100%;
-            height: 3px;
+            height: 2px;
             background: transparent;
             transition: background 300ms ease-in-out;
           }
@@ -122,6 +120,7 @@
 
           &.currentlyActive::after {
             background: white;
+            height: 3px;
           }
         }
       }

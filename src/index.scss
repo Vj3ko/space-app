@@ -13,6 +13,10 @@
 
 body {
   font-family: $barlow;
+
+  @include breakpoint("large") {
+    overflow: hidden;
+  }
 }
 
 a {
