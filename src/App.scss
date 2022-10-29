@@ -1,0 +1,59 @@
+@use "./styles/components/breakpoints.scss" as *;
+
+.bg-style {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+body {
+  transition: 500ms all 500ms ease-in-out;
+
+  &.home.bg-style {
+    background-image: url("./assets/home/background-home-mobile.jpg");
+
+    @include breakpoint("medium") {
+      background-image: url("./assets/home/background-home-tablet.jpg");
+    }
+
+    @include breakpoint("large") {
+      background-image: url("./assets/home/background-home-desktop.jpg");
+    }
+  }
+
+  &.destination.bg-style {
+    background-image: url("./assets/destination/background-destination-mobile.jpg");
+
+    @include breakpoint("medium") {
+      background-image: url("./assets/destination/background-destination-tablet.jpg");
+    }
+
+    @include breakpoint("large") {
+      background-image: url("./assets/destination/background-destination-desktop.jpg");
+    }
+  }
+
+  &.crew.bg-style {
+    background-image: url("./assets/crew/background-crew-mobile.jpg");
+
+    @include breakpoint("medium") {
+      background-image: url("./assets/crew/background-crew-tablet.jpg");
+    }
+
+    @include breakpoint("large") {
+      background-image: url("./assets/crew/background-crew-desktop.jpg");
+    }
+  }
+
+  &.technology.bg-style {
+    background-image: url("./assets/technology/background-technology-mobile.jpg");
+
+    @include breakpoint("medium") {
+      background-image: url("./assets/technology/background-technology-tablet.jpg");
+    }
+
+    @include breakpoint("large") {
+      background-image: url("./assets/technology/background-technology-desktop.jpg");
+    }
+  }
+}

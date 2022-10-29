@@ -1,0 +1,140 @@
+@use "./components/functions.scss" as *;
+@use "./components/variables.scss" as *;
+@use "./components/fonts.scss" as *;
+@use "./components/breakpoints.scss" as *;
+
+.wrapper.t {
+  margin: auto;
+
+  @include breakpoint("medium") {
+    margin-top: rem(0);
+  }
+
+  @include breakpoint("large") {
+    margin-top: rem(56);
+  }
+}
+
+.article__t-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: rem(34);
+  margin-top: rem(32);
+
+  @include breakpoint("medium") {
+    margin-top: rem(60);
+    gap: rem(50);
+  }
+
+  @include breakpoint("large") {
+    flex-direction: row;
+  }
+}
+
+.img_t-wrapper {
+  width: 100vw;
+  position: relative;
+  left: calc(-50vw + 50%);
+
+  @include breakpoint("large") {
+    width: rem(515);
+    left: unset;
+    order: 3;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
+.btns--container {
+  display: flex;
+  justify-content: center;
+  gap: rem(16);
+
+  @include breakpoint("large") {
+    order: 1;
+    flex-direction: column;
+    gap: rem(32);
+  }
+
+  .technology-btn {
+    width: rem(40);
+    height: rem(40);
+    border-radius: 50%;
+    border: 1px solid rgba($white, 0.3);
+    font-family: $bellefair;
+    font-size: rem(16);
+    color: $light-blue;
+    background: transparent;
+    cursor: pointer;
+    transition: 300ms ease-in-out;
+
+    @include breakpoint("large") {
+      width: rem(80);
+      height: rem(80);
+      font-size: rem(32);
+    }
+
+    &.active {
+      background: $white;
+      color: $dark-blue;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: $white;
+    }
+  }
+}
+
+.article__technology {
+  @include breakpoint("large") {
+    order: 2;
+    text-align: left;
+    align-self: center;
+  }
+
+  &_subtitle {
+    font-size: rem(14);
+    letter-spacing: 2.36px;
+    text-transform: uppercase;
+    color: $light-blue;
+
+    @include breakpoint("medium") {
+      font-size: rem(16);
+    }
+
+    @include breakpoint("large") {
+      font-size: rem(20);
+    }
+  }
+
+  &_name {
+    font-family: $bellefair;
+    font-size: rem(24);
+    font-weight: normal;
+    color: $white;
+    text-transform: uppercase;
+    margin: rem(9) 0 rem(16) 0;
+
+    @include breakpoint("medium") {
+      font-size: rem(40);
+    }
+
+    @include breakpoint("large") {
+      font-size: rem(56);
+      margin-top: rem(20);
+    }
+  }
+
+  &_description {
+    @include breakpoint("medium") {
+      max-width: rem(460);
+    }
+
+    @include breakpoint("large") {
+      max-width: rem(470);
+    }
+  }
+}

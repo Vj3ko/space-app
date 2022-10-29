@@ -1,0 +1,180 @@
+@use "./components/functions.scss" as *;
+@use "./components/variables.scss" as *;
+@use "./components/fonts.scss" as *;
+@use "./components/breakpoints.scss" as *;
+
+.wrapper.c {
+  @include breakpoint("medium") {
+    margin-top: rem(0);
+  }
+
+  @include breakpoint("large") {
+    margin-top: rem(56);
+  }
+}
+
+.article__c-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: rem(32);
+
+  @include breakpoint("medium") {
+    flex-direction: column;
+  }
+
+  @include breakpoint("large") {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: rem(0);
+  }
+}
+
+.article__crew {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  max-width: rem(560);
+  margin: auto;
+
+  @include breakpoint("medium") {
+    margin-top: rem(30);
+  }
+
+  @include breakpoint("large") {
+    max-width: initial;
+    margin: 0;
+    text-align: left;
+    align-self: center;
+    flex: 1;
+  }
+
+  &_role {
+    margin-top: rem(32);
+    font-size: rem(16);
+    font-family: $bellefair;
+    text-transform: uppercase;
+    color: #979797;
+
+    @include breakpoint("medium") {
+      font-size: rem(24);
+    }
+
+    @include breakpoint("large") {
+      font-size: rem(32);
+    }
+  }
+
+  &_name {
+    font-family: $bellefair;
+    font-size: rem(24);
+    text-transform: uppercase;
+    color: $white;
+    font-weight: 300;
+    margin: rem(10) 0;
+
+    @include breakpoint("medium") {
+      font-size: rem(40);
+    }
+
+    @include breakpoint("large") {
+      font-size: rem(52);
+    }
+  }
+
+  &_bio {
+    @include breakpoint("medium") {
+      max-width: rem(535);
+    }
+
+    @include breakpoint("large") {
+      text-align: left;
+      margin: 0;
+    }
+  }
+
+  &_btns--container {
+    order: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(16);
+
+    @include breakpoint("medium") {
+      order: initial;
+      margin-top: rem(40);
+      gap: rem(20);
+    }
+
+    @include breakpoint("large") {
+      margin-top: rem(120);
+      align-self: start;
+    }
+
+    .crew-btn {
+      width: rem(10);
+      height: rem(10);
+      border-radius: 50%;
+      border: none;
+      cursor: pointer;
+      background-color: rgba($white, 0.2);
+      transition: background-color 300ms ease-in-out;
+
+      &:focus,
+      &:hover {
+        background-color: rgba($white, 0.6);
+      }
+
+      &.active {
+        background-color: $white;
+      }
+    }
+  }
+}
+
+.img_wrapper {
+  margin: auto;
+  margin-top: rem(32);
+  height: rem(223);
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4b4e61;
+
+    @include breakpoint("medium") {
+      display: none;
+    }
+  }
+
+  @include breakpoint("medium") {
+    height: rem(570);
+    margin-top: unset;
+  }
+
+  @include breakpoint("large") {
+    margin-top: unset;
+    height: rem(700);
+    min-width: fit-content;
+    flex: 1;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    @include breakpoint("large") {
+      width: unset;
+    }
+  }
+}
+
+// TODO
+// add reusable codes with classes so u dont repeat yourself
+//stavit nav da nije position absolute nakon toga i dodat onu crtu
+
+//animation fix na components

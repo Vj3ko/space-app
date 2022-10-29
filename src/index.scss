@@ -1,0 +1,115 @@
+@use "./styles/components/fonts.scss" as *;
+@use "./styles/components/functions.scss" as *;
+@use "./styles/components/variables.scss" as *;
+@use "./styles/components/breakpoints.scss" as *;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $barlow;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+
+  &:visited {
+    color: none;
+  }
+}
+
+ul {
+  list-style-type: none;
+}
+
+p {
+  font-size: rem(15);
+  font-weight: 300;
+  line-height: rem(25);
+  color: $light-blue;
+  margin: auto;
+
+  @include breakpoint("medium") {
+    font-size: rem(16);
+    line-height: rem(28);
+  }
+  @include breakpoint("medium") {
+    font-size: rem(18);
+    line-height: rem(32);
+  }
+}
+
+.container {
+  width: 100%;
+  padding: rem(24);
+
+  @include breakpoint("medium") {
+    padding: rem(50);
+  }
+}
+
+.wrapper {
+  margin: auto;
+  text-align: center;
+
+  @include breakpoint("medium") {
+    margin-top: rem(0);
+  }
+
+  @include breakpoint("large") {
+    margin-top: rem(56);
+  }
+}
+
+.hero__flex-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include breakpoint("medium") {
+    justify-content: start;
+  }
+
+  .hero__number {
+    font-size: rem(16);
+    font-weight: bold;
+    color: rgba($white, 0.3);
+    letter-spacing: 2.7px;
+
+    @include breakpoint("medium") {
+      font-size: rem(20);
+    }
+
+    @include breakpoint("large") {
+      font-size: rem(30);
+    }
+  }
+
+  .hero__subtitle {
+    font-size: rem(16);
+    font-weight: 300;
+    color: $white;
+    text-transform: uppercase;
+    letter-spacing: 2.7px;
+    margin-left: rem(20);
+
+    @include breakpoint("medium") {
+      font-size: rem(20);
+      margin-left: rem(30);
+    }
+
+    @include breakpoint("large") {
+      font-size: rem(30);
+    }
+  }
+}
+
+.max-width {
+  max-width: rem(1200);
+}

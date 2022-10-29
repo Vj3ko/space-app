@@ -1,0 +1,180 @@
+@use "./components/functions.scss" as *;
+@use "./components/variables.scss" as *;
+@use "./components/fonts.scss" as *;
+@use "./components/breakpoints.scss" as *;
+
+.wrapper.d {
+  @include breakpoint("medium") {
+    margin-top: rem(15);
+  }
+
+  @include breakpoint("large") {
+    margin-top: rem(56);
+  }
+}
+
+.hero-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.article__d-wrapper {
+  @include breakpoint("large") {
+    display: flex;
+    justify-content: space-between;
+    gap: rem(100);
+    margin-top: rem(50);
+  }
+}
+
+.hero__img {
+  width: rem(170);
+  height: rem(170);
+  margin: rem(32) 0;
+
+  @include breakpoint("medium") {
+    width: rem(300);
+    height: rem(300);
+    margin: rem(60) 0;
+  }
+
+  @include breakpoint("large") {
+    width: rem(445);
+    height: rem(445);
+  }
+}
+
+.article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint("large") {
+    align-items: start;
+  }
+
+  .btn-container {
+    display: flex;
+    gap: rem(26);
+
+    .btn-destination {
+      border: none;
+      outline: none;
+      background: transparent;
+      color: $light-blue;
+      text-transform: uppercase;
+      font-size: rem(14);
+      font-weight: 300;
+      font-family: $barlow;
+      letter-spacing: 2.36px;
+      position: relative;
+      cursor: pointer;
+      transition: color 300ms ease-in-out;
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        bottom: -10px;
+        background: transparent;
+        transition: background 300ms ease-in-out;
+      }
+
+      &:hover::after,
+      &:focus::after {
+        background: rgba($white, 0.3);
+      }
+
+      &.active {
+        color: $white;
+
+        &::after {
+          background: $white;
+        }
+      }
+
+      @include breakpoint("medium") {
+        font-size: rem(18);
+      }
+
+      @include breakpoint("large") {
+        font-size: rem(22);
+      }
+    }
+  }
+
+  &__title {
+    font-size: rem(56);
+    font-family: $bellefair;
+    color: $white;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-top: rem(20);
+
+    @include breakpoint("medium") {
+      font-size: rem(80);
+      margin-top: rem(32);
+    }
+
+    @include breakpoint("large") {
+      font-size: rem(100);
+      margin-top: rem(50);
+    }
+  }
+
+  &__description {
+    padding-bottom: rem(32);
+    border-bottom: 1px solid #383b4b;
+    max-width: rem(290);
+
+    @include breakpoint("medium") {
+      padding-bottom: rem(50);
+      max-width: rem(480);
+    }
+
+    @include breakpoint("large") {
+      text-align: left;
+      max-width: rem(444);
+    }
+  }
+
+  &__footer {
+    padding: rem(32) 0 rem(20) 0;
+    display: flex;
+    flex-direction: column;
+    gap: rem(30);
+
+    @include breakpoint("medium") {
+      flex-direction: row;
+      gap: rem(100);
+    }
+
+    .flex-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: rem(10);
+
+      @include breakpoint("large") {
+        align-items: start;
+      }
+
+      & span {
+        font-size: rem(14);
+        font-weight: 300;
+        letter-spacing: 2.36px;
+        text-transform: uppercase;
+        color: $light-blue;
+      }
+      & p {
+        font-size: rem(28);
+        font-weight: 300;
+        font-family: $bellefair;
+        text-transform: uppercase;
+        color: $white;
+      }
+    }
+  }
+}

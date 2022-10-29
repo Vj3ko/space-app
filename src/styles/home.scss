@@ -1,0 +1,95 @@
+@use "./components/functions.scss" as *;
+@use "./components/variables.scss" as *;
+@use "./components/fonts.scss" as *;
+@use "./components/breakpoints.scss" as *;
+
+.wrapper.h {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include breakpoint("medium") {
+    margin-top: rem(50);
+  }
+
+  @include breakpoint("large") {
+    margin-top: rem(200);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: end;
+  }
+}
+
+.hero {
+  @include breakpoint("large") {
+    text-align: left;
+  }
+
+  &__intro {
+    color: $light-blue;
+    font-size: rem(16);
+    letter-spacing: 2.7px;
+    text-transform: uppercase;
+
+    @include breakpoint("medium") {
+      font-size: rem(20);
+    }
+  }
+
+  &__title {
+    color: $white;
+    font-size: rem(80);
+    font-weight: normal;
+    font-family: $bellefair;
+    text-transform: uppercase;
+    padding: rem(20) 0;
+
+    @include breakpoint("medium") {
+      font-size: rem(150);
+    }
+  }
+
+  &__description {
+    max-width: rem(500);
+
+    @include breakpoint("medium") {
+      font-size: rem(20);
+    }
+    @include breakpoint("large") {
+      line-height: 2;
+    }
+  }
+}
+
+.action-btn {
+  margin-top: rem(80);
+  text-transform: uppercase;
+  font-size: rem(20);
+  font-family: $bellefair;
+  letter-spacing: 2px;
+  color: $dark-blue;
+  width: rem(150);
+  height: rem(150);
+  background-color: $white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: 0px solid transparent;
+  transition: outline 300ms ease-in-out;
+
+  &:hover,
+  &:focus {
+    outline: rem(50) solid rgba($light-blue, 0.1);
+    border-radius: 50%;
+  }
+
+  @include breakpoint("medium") {
+    width: rem(250);
+    height: rem(250);
+    font-size: rem(32);
+  }
+  @include breakpoint("large") {
+    margin: 0;
+  }
+}
