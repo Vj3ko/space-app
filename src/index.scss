@@ -13,10 +13,6 @@
 
 body {
   font-family: $barlow;
-
-  @include breakpoint("large") {
-    overflow: hidden;
-  }
 }
 
 a {
@@ -49,12 +45,30 @@ p {
   }
 }
 
+button,
+textarea,
+input,
+select,
+a {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .container {
   width: 100%;
   padding: rem(24);
 
   @include breakpoint("medium") {
     padding: rem(50);
+  }
+
+  @include breakpoint("xlarge") {
+    padding: unset;
   }
 }
 
@@ -67,7 +81,7 @@ p {
   }
 
   @include breakpoint("large") {
-    margin-top: rem(56);
+    margin-top: rem(32);
   }
 }
 

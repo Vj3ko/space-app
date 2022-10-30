@@ -11,6 +11,12 @@ export default function Navbar() {
   const [openMenu, setIsOpenMenu] = useState(false);
   const header = useRef();
 
+  if (openMenu) {
+    document.body.style.overflowY = "hidden";
+  } else {
+    document.body.style.overflowY = "initial";
+  }
+
   useEffect(() => {
     function handleWindowResize() {
       setWindowSize(getWindowSize());

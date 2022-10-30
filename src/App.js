@@ -13,23 +13,23 @@ import { AnimatePresence } from "framer-motion";
 //import routing
 import { Route, Routes, useLocation } from "react-router-dom";
 
-function App() {
+export default function App() {
   const location = useLocation();
 
   if (location.pathname === "/destination") {
-    document.body.className = "destination bg-style";
+    document.body.className = "destination";
   } else if (location.pathname === "/crew") {
-    document.body.className = "crew bg-style";
+    document.body.className = "crew";
   } else if (location.pathname === "/technology") {
-    document.body.className = "technology bg-style";
+    document.body.className = "technology";
   } else {
-    document.body.className = "home bg-style";
+    document.body.className = "";
   }
 
   return (
     <div style={{ minHeight: "100vh" }}>
       <Navbar />
-      <AnimatePresence mode='wait' initial={false}>
+      <AnimatePresence mode='wait'>
         <Routes location={location} key={location.pathname}>
           <Route exact path='/' element={<HomeLayout />} />
           <Route path='/destination/*' element={<DestinationLayout />} />
@@ -40,5 +40,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

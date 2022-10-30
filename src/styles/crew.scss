@@ -3,12 +3,6 @@
 @use "./components/fonts.scss" as *;
 @use "./components/breakpoints.scss" as *;
 
-.container {
-  @include breakpoint("large") {
-    padding-bottom: 0 !important;
-  }
-}
-
 .wrapper.c {
   @include breakpoint("medium") {
     margin-top: rem(0);
@@ -181,6 +175,7 @@
 
 // TODO
 // add reusable codes with classes so u dont repeat yourself
-//stavit nav da nije position absolute nakon toga i dodat onu crtu
+// like h1, h2
+// dodat onu crtu po dizajnu
 
-//animation fix na components
+//animation fix na components, mozda carousel

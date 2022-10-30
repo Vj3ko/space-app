@@ -32,10 +32,6 @@
 }
 
 .img_t-wrapper {
-  width: 100vw;
-  position: relative;
-  left: calc(-50vw + 50%);
-
   @include breakpoint("large") {
     width: rem(515);
     left: unset;

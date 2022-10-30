@@ -13,6 +13,7 @@ export default function HomeLayout() {
         animate={{
           opacity: 1,
         }}
+        transition={{ duration: 0.5 }}
         exit={{ opacity: 0, transition: { duration: 0.5 } }}
       >
         <div className='wrapper h max-width'>

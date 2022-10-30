@@ -1,27 +1,21 @@
 @use "./styles/components/breakpoints.scss" as *;
 
-.bg-style {
+body {
+  background-image: url("./assets/home/background-home-mobile.jpg");
+  transition: 0.7s background-image 0.5s cubic-bezier(0.17, 0.67, 0.31, 0.36);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center center;
-}
+  background-position: 50% 50%;
 
-body {
-  transition: 500ms all 500ms ease-in-out;
-
-  &.home.bg-style {
-    background-image: url("./assets/home/background-home-mobile.jpg");
-
-    @include breakpoint("medium") {
-      background-image: url("./assets/home/background-home-tablet.jpg");
-    }
-
-    @include breakpoint("large") {
-      background-image: url("./assets/home/background-home-desktop.jpg");
-    }
+  @include breakpoint("medium") {
+    background-image: url("./assets/home/background-home-tablet.jpg");
   }
 
-  &.destination.bg-style {
+  @include breakpoint("large") {
+    background-image: url("./assets/home/background-home-desktop.jpg");
+  }
+
+  &.destination {
     background-image: url("./assets/destination/background-destination-mobile.jpg");
 
     @include breakpoint("medium") {
@@ -33,7 +27,7 @@ body {
     }
   }
 
-  &.crew.bg-style {
+  &.crew {
     background-image: url("./assets/crew/background-crew-mobile.jpg");
 
     @include breakpoint("medium") {
@@ -45,7 +39,7 @@ body {
     }
   }
 
-  &.technology.bg-style {
+  &.technology {
     background-image: url("./assets/technology/background-technology-mobile.jpg");
 
     @include breakpoint("medium") {
