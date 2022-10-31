@@ -7,12 +7,6 @@ import data from "../data.json";
 //destination data from local json
 const destinations = data.destinations;
 
-//animations
-// const item = {
-//   hidden: { opacity: 0 },
-//   visible: { opacity: 1, transition: { duration: 0.5 } },
-// };
-
 export default function DestinationLayout() {
   const [planets] = useState(destinations);
   const [value, setValue] = useState(0);
@@ -63,14 +57,7 @@ export default function DestinationLayout() {
                   })}
                 </div>
 
-                <motion.h1
-                  className='article__title'
-                  // variants={item}
-                  // initial='hidden'
-                  // animate='visible'
-                >
-                  {name}
-                </motion.h1>
+                <h1 className='article__title'>{name}</h1>
                 <p className='article__description'>{description}</p>
 
                 <div className='article__footer'>
