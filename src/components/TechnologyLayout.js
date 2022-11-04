@@ -53,7 +53,7 @@ export default function TechnologyLayout() {
               <div className='img_t-wrapper'>
                 <img
                   src={
-                    windowSize.innerWidth > 1024
+                    windowSize.innerWidth > 1023
                       ? images.portrait
                       : images.landscape
                   }
